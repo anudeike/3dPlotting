@@ -1,5 +1,5 @@
 # Welcome to 3dPlot
-A small lightweight CLI that functions to simply display bots
+A small lightweight CLI that functions to simply display plots
 
 ## Getting Started
 
