@@ -2,10 +2,13 @@ def main(input_text):
 
     # split the text using the colon
     primary_tokens = input_text.split(':')
+    print("primary tokens: " + str(primary_tokens))
 
     # check if the first string in primary token is a plot command
     if (primary_tokens[0] != 'plot'):
         raise KeyError("Must call the keyword 'plot' ")
+
+
 
     # check if the equal sign is in the tokens
     if ("=" not in primary_tokens[1]):
@@ -13,6 +16,7 @@ def main(input_text):
 
     # split into two again
     sec_tokens = primary_tokens[1].split("=")
+    print("secondary tokens: " + str(sec_tokens))
 
     # check if there is a z
     if ('z' not in sec_tokens[1]):
@@ -25,6 +29,8 @@ def main(input_text):
     expr = expr.replace('sin(', 'np.sin(')
     expr = expr.replace('cos(', 'np.cos(')
     expr = expr.replace('e^', 'np.e')
+
+    print("expr: " + str(expr))
 
     # make sure that you catch the sin, cos, e and other functions
 
@@ -64,6 +70,6 @@ plt.show()"""
     pass
 
 if __name__ == "__main__":
-    input_text = "plot: x + y = z"
+    input_text = "plot: x^2 + y^2 = z"
     main(input_text)
 
