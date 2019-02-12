@@ -2,7 +2,7 @@ def main(input_text):
 
     # split the text using the colon
     primary_tokens = input_text.split(':')
-    print("primary tokens: " + str(primary_tokens))
+    #print("primary tokens: " + str(primary_tokens))
 
     # check if the first string in primary token is a plot command
     if (primary_tokens[0] != 'plot'):
@@ -16,13 +16,13 @@ def main(input_text):
 
     # split into two again
     sec_tokens = primary_tokens[1].split("=")
-    print("secondary tokens: " + str(sec_tokens))
+    #print("secondary tokens: " + str(sec_tokens))
 
     # check if there is a z
     if ('z' not in sec_tokens[1]):
         raise KeyError('entry must contain a z variable')
 
-    print(sec_tokens)
+    #print(sec_tokens)
 
     # generate the expression to put into the function - replace the
     expr = sec_tokens[0].replace('^', '**')
@@ -30,7 +30,7 @@ def main(input_text):
     expr = expr.replace('cos(', 'np.cos(')
     expr = expr.replace('e^', 'np.e')
 
-    print("expr: " + str(expr))
+    #print("expr: " + str(expr))
 
     # make sure that you catch the sin, cos, e and other functions
 

@@ -12,8 +12,8 @@ create addition arguments with the argument decorator
 @click.option('--plot3d', default='', help='plots a 3d figure')
 def cli(plot3d):
     """enter py plot.py to display the plot"""
-    click.echo("Hello World")
-    click.echo('This is your formula {0}'.format(plot3d))
+    #click.echo("Hello World")
+    #click.echo('This is your formula {0}'.format(plot3d))
     op.main('{0}'.format(plot3d))
 
     #take the string for the cli and send it into the parser to create the file
